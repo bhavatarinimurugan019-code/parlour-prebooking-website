@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js"
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node backend/server.js",
+    "dev:client": "vite --config vite.config.js",
+    "build": "vite build --config vite.config.js",
+    "start": "node backend/server.js",
+    "test": "node --check backend/server.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +25,7 @@
     "razorpay": "^2.9.8"
   },
   "devDependencies": {
+    "concurrently": "^9.2.1",
     "nodemon": "^3.1.14"
   }
 }

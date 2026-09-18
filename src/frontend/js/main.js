@@ -1,6 +1,7 @@
 async function loadServices() {
   const response = await fetch("/api/services");
-  const services = await response.json();
+  const result = await response.json();
+  const services = result.services || [];
 
   const container = document.getElementById("serviceList");
 
@@ -15,7 +16,8 @@ async function loadServices() {
 
 async function loadGallery() {
   const response = await fetch("/api/gallery");
-  const gallery = await response.json();
+  const result = await response.json();
+  const gallery = result.gallery || [];
 
   document.getElementById("galleryList").innerHTML =
     gallery.map(image => `

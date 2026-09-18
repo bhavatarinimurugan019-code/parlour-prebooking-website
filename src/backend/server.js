@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 const ROOT = path.join(__dirname, "..");
 const DATA_FILE = path.join(__dirname, "data.json");
@@ -479,13 +479,17 @@ app.get("/api/dashboard", (req, res) => {
    START SERVER
 ========================= */
 
-app.listen(PORT, () => {
-  console.log("");
-  console.log("====================================");
-  console.log(" KIRUTHIS PARLOUR");
-  console.log(" Server running successfully");
-  console.log(` Customer: http://localhost:${PORT}`);
-  console.log(` Admin:    http://localhost:${PORT}/admin`);
-  console.log("====================================");
-  console.log("");
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log("");
+    console.log("====================================");
+    console.log(" KIRUTHIS PARLOUR");
+    console.log(" Server running successfully");
+    console.log(` Customer: http://localhost:${PORT}`);
+    console.log(` Admin:    http://localhost:${PORT}/admin`);
+    console.log("====================================");
+    console.log("");
+  });
+}
+
+module.exports = app;
