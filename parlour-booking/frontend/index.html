@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KIRUTHIS PARLOUR</title>
+
+    <meta
+        name="description"
+        content="KIRUTHIS PARLOUR - Hair, Skin, Facial, Makeup, Bridal, Nails, Waxing and Spa Services"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .nav-book {
+            background: #111;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 82vh;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.97) 0%,
+                    rgba(255,255,255,0.88) 38%,
+                    rgba(255,255,255,0.15) 100%
+                ),
+                url("https://i.pinimg.com/originals/f2/0a/33/f20a33de038e387e9dea863b773b1555.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 1300px;
+            width: 100%;
+            margin: auto;
+            padding: 80px 5%;
+        }
+
+        .hero-small {
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 78px);
+            line-height: 1.05;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 560px;
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 14px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .primary-btn {
+            background: #111;
+            color: white;
+        }
+
+        .secondary-btn {
+            background: white;
+            border: 1px solid #222;
+        }
+
+        /* =========================
+           COMMON
+        ========================= */
+
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        .section {
+            padding: 90px 5%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .small-title {
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #777;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #fafafa;
+        }
+
+        .about-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-text h2 {
+            font-size: 38px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services-section {
+            padding: 90px 5%;
+            background: #fff;
+        }
+
+        .service-categories {
+            max-width: 1200px;
+            margin: 0 auto 45px;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .category-btn {
+            padding: 12px 22px;
+
+            border: 1px solid #ddd;
+            background: #fff;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+        .category-btn:hover {
+            transform: translateY(-2px);
+            border-color: #111;
+        }
+
+        .category-btn.active {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
+        /* SERVICE GRID */
+
+        .services-grid {
+            max-width: 1300px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        /* SERVICE CARD */
+
+        .service-card {
+            background: #fff;
+
+            border: 1px solid #eee;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.06);
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.10);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+
+            display: block;
+
+            background: #f2f2f2;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-category {
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: #999;
+
+            margin-bottom: 7px;
+        }
+
+        .service-content h3 {
+            font-size: 18px;
+
+            line-height: 1.3;
+
+            margin-bottom: 14px;
+
+            min-height: 47px;
+        }
+
+        .service-info {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+        }
+
+        .service-price {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .service-duration {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .service-book {
+            width: 100%;
+
+            padding: 12px;
+
+            background: #111;
+
+            color: #fff;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+        }
+
+        .service-book:hover {
+            opacity: 0.85;
+        }
+
+        .loading {
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 60px;
+
+            color: #777;
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            background: #fafafa;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 300px;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* =========================
+           BOOKING
+        ========================= */
+
+        .booking-section {
+            padding: 90px 5%;
+            background: #fff;
+        }
+
+        .booking-container {
+            max-width: 900px;
+
+            margin: auto;
+
+            background: #fafafa;
+
+            padding: 45px;
+
+            border-radius: 22px;
+
+            border: 1px solid #eee;
+        }
+
+        .booking-form {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            background: #fff;
+
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #111;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+
+            padding: 15px;
+
+            background: #111;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.85;
+        }
+
+        .booking-message {
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 12px;
+
+            display: none;
+
+            border-radius: 8px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #111;
+            color: white;
+        }
+
+        .contact .section-heading p {
+            color: #aaa;
+        }
+
+        .contact-grid {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border: 1px solid #333;
+
+            border-radius: 15px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #aaa;
+        }
+
+        .contact-card a {
+            color: white;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #080808;
+
+            color: #aaa;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        @media (max-width: 850px) {
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero-content {
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .section,
+            .services-section,
+            .booking-section {
+                padding: 65px 5%;
+            }
+
+            .section-heading h2 {
+                font-size: 31px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-image {
+                height: 240px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 260px;
+            }
+
+            .booking-container {
+                padding: 25px;
+            }
+
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full,
+            .submit-btn,
+            .booking-message {
+                grid-column: auto;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <div class="logo">
+            KIRUTHIS PARLOUR
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#gallery">
+                Gallery
+            </a>
+
+            <a href="#booking">
+                Booking
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a
+                href="#booking"
+                class="nav-book"
+            >
+                Book Now
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            KIRUTHIS PARLOUR
+        </div>
+
+        <h1>
+            Your Beauty.<br>
+            Your Style.
+        </h1>
+
+        <p>
+            Professional hair, skin, facial, makeup,
+            bridal, nail, waxing and spa services
+            designed around you.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#booking"
+                class="primary-btn"
+            >
+                Book an Appointment
+            </a>
+
+            <a
+                href="#services"
+                class="secondary-btn"
+            >
+                Explore Services
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="section about"
+    id="about"
+>
+
+    <div class="about-grid">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1000"
+                alt="KIRUTHIS PARLOUR"
+            >
+
+        </div>
+
+        <div class="about-text">
+
+            <p class="small-title">
+                ABOUT US
+            </p>
+
+            <h2>
+                Beauty care with a personal touch.
+            </h2>
+
+            <p>
+                KIRUTHIS PARLOUR provides a complete
+                range of beauty and salon services in
+                a comfortable environment.
+            </p>
+
+            <p>
+                From everyday hair care and skincare
+                to bridal makeup and relaxing spa
+                treatments, our services are designed
+                around your needs.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+    class="services-section"
+    id="services"
+>
+
+    <div class="section-heading">
+
+        <p class="small-title">
+            OUR SERVICES
+        </p>
+
+        <h2>
+            Beauty & Salon Services
+        </h2>
+
+        <p>
+            Choose a category to explore our services.
+        </p>
+
+    </div>
+
+
+    <!-- CATEGORY BUTTONS -->
+
+    <div class="service-categories">
+
+        <button
+            class="category-btn active"
+            data-category="Hair"
+        >
+            Hair
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Skin & Facial"
+        >
+            Skin & Facial
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Threading"
+        >
+            Threading
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Waxing"
+        >
+            Waxing
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Nails"
+        >
+            Nails
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Makeup"
+        >
+            Makeup
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Bridal"
+        >
+            Bridal
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Spa"
+        >
+            Spa
+        </button>
+
+    </div>
+
+
+    <!-- DYNAMIC SERVICES -->
+
+    <div
+        id="servicesGrid"
+        class="services-grid"
+    >
+
+        <div class="loading">
+            Loading services...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section
+    class="section gallery"
+    id="gallery"
+>
+
+    <div class="section-heading">
+
+        <p class="small-title">
+            OUR GALLERY
+        </p>
+
+        <h2>
+            Our Work & Space
+        </h2>
+
+        <p>
+            Explore our salon and beauty work.
+        </p>
+
+    </div>
+
+
+    <div
+        id="galleryGrid"
+        class="gallery-grid"
+    >
+
+        <div class="loading">
+            Loading gallery...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING
+========================= -->
+
+<section
+    class="booking-section"
+    id="booking"
+>
+
+    <div class="section-heading">
+
+        <p class="small-title">
+            APPOINTMENT
+        </p>
+
+        <h2>
+            Book Your Appointment
+        </h2>
+
+        <p>
+            Select your service and preferred date and time.
+        </p>
+
+    </div>
+
+
+    <div class="booking-container">
+
+        <form
+            id="bookingForm"
+            class="booking-form"
+        >
+
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Full Name *
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    required
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number *
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    required
+                    placeholder="Enter phone number"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter email"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="members">
+                    Number of Members
+                </label>
+
+                <input
+                    type="number"
+                    id="members"
+                    min="1"
+                    value="1"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="service">
+                    Select Service *
+                </label>
+
+                <select
+                    id="service"
+                    required
+                >
+
+                    <option value="">
+                        Loading services...
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="date">
+                    Preferred Date *
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="time">
+                    Preferred Time *
+                </label>
+
+                <input
+                    type="time"
+                    id="time"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="additionalNotes">
+                    Additional Notes
+                </label>
+
+                <textarea
+                    id="additionalNotes"
+                    placeholder="Any special requirements?"
+                ></textarea>
+
+            </div>
+
+
+            <div
+                id="bookingMessage"
+                class="booking-message"
+            ></div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Confirm Booking
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="section contact"
+    id="contact"
+>
+
+    <div class="section-heading">
+
+        <p class="small-title">
+            CONTACT
+        </p>
+
+        <h2>
+            Get In Touch
+        </h2>
+
+        <p>
+            Contact us for appointments and enquiries.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3>
+                Phone
+            </h3>
+
+            <p>
+                <a href="tel:+918072549592">
+                    +91 80725 49592
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>
+                WhatsApp
+            </h3>
+
+            <p>
+
+                <a
+                    href="https://wa.me/918072549592"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Chat on WhatsApp
+                </a>
+
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>
+                Instagram
+            </h3>
+
+            <p>
+
+                <a
+                    href="https://www.instagram.com/YOUR_INSTAGRAM_ID/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Follow us
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026 KIRUTHIS PARLOUR.
+    All rights reserved.
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   KIRUTHIS PARLOUR - CUSTOMER WEBSITE
+===================================================== */
+
+
+let allServices = [];
+
+let currentCategory = "Hair";
+
+
+/* =====================================================
+   LOAD SERVICES
+===================================================== */
+
+async function loadServices() {
+
+    const grid =
+        document.getElementById("servicesGrid");
+
+    const select =
+        document.getElementById("service");
+
+
+    try {
+
+        const response =
+            await fetch("/api/services");
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to connect to server"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                "Services unavailable"
+            );
+
+        }
+
+
+        allServices =
+            Array.isArray(data.services)
+                ? data.services
+                : [];
+
+
+        displayServices(
+            currentCategory
+        );
+
+
+        loadBookingServices();
+
+
+    } catch (error) {
+
+        console.error(
+            "Service error:",
+            error
+        );
+
+
+        grid.innerHTML = `
+            <div class="loading">
+                Services could not be loaded.
+                Please start the server and refresh.
+            </div>
+        `;
+
+
+        select.innerHTML = `
+            <option value="">
+                Services unavailable
+            </option>
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   DISPLAY SERVICES
+===================================================== */
+
+function displayServices(category) {
+
+    const grid =
+        document.getElementById(
+            "servicesGrid"
+        );
+
+
+    const selectedCategory =
+        String(category)
+            .trim()
+            .toLowerCase();
+
+
+    const filteredServices =
+        allServices.filter(service => {
+
+            const serviceCategory =
+                String(
+                    service.category || ""
+                )
+                .trim()
+                .toLowerCase();
+
+
+            return (
+                serviceCategory ===
+                selectedCategory
+            );
+
+        });
+
+
+    if (
+        filteredServices.length === 0
+    ) {
+
+        grid.innerHTML = `
+            <div class="loading">
+                No services available in
+                ${escapeHTML(category)}.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    grid.innerHTML =
+        filteredServices
+            .map(service => {
+
+                const image =
+                    service.image ||
+                    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800";
+
+
+                const price =
+                    Number(
+                        service.price || 0
+                    )
+                    .toLocaleString("en-IN");
+
+
+                return `
+
+                    <div class="service-card">
+
+                        <img
+                            src="${escapeHTML(image)}"
+                            alt="${escapeHTML(service.name)}"
+                            class="service-image"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800'"
+                        >
+
+                        <div class="service-content">
+
+                            <div class="service-category">
+
+                                ${escapeHTML(
+                                    service.category
+                                )}
+
+                            </div>
+
+                            <h3>
+
+                                ${escapeHTML(
+                                    service.name
+                                )}
+
+                            </h3>
+
+                            <div class="service-info">
+
+                                <div class="service-price">
+
+                                    ₹${price}
+
+                                </div>
+
+                                <div class="service-duration">
+
+                                    ${escapeHTML(
+                                        service.duration ||
+                                        "30 min"
+                                    )}
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="service-book"
+                                onclick="selectService(${Number(service.id)})"
+                            >
+
+                                Book This Service
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            })
+            .join("");
+
+}
+
+
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
+
+document
+    .querySelectorAll(".category-btn")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                document
+                    .querySelectorAll(
+                        ".category-btn"
+                    )
+                    .forEach(btn => {
+
+                        btn.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                this.classList.add(
+                    "active"
+                );
+
+
+                currentCategory =
+                    this.dataset.category;
+
+
+                displayServices(
+                    currentCategory
+                );
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   SELECT SERVICE
+===================================================== */
+
+function selectService(serviceId) {
+
+    const service =
+        allServices.find(
+            item =>
+                Number(item.id) ===
+                Number(serviceId)
+        );
+
+
+    if (!service) {
+
+        return;
+
+    }
+
+
+    const select =
+        document.getElementById(
+            "service"
+        );
+
+
+    select.value =
+        String(service.id);
+
+
+    const booking =
+        document.getElementById(
+            "booking"
+        );
+
+
+    if (booking) {
+
+        booking.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+/* =====================================================
+   BOOKING DROPDOWN
+===================================================== */
+
+function loadBookingServices() {
+
+    const select =
+        document.getElementById(
+            "service"
+        );
+
+
+    select.innerHTML = `
+
+        <option value="">
+            Select a service
+        </option>
+
+    `;
+
+
+    allServices.forEach(
+        service => {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                service.id;
+
+
+            option.textContent =
+                `${service.name} - ₹${Number(
+                    service.price || 0
+                ).toLocaleString("en-IN")}`;
+
+
+            select.appendChild(
+                option
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+async function loadGallery() {
+
+    const grid =
+        document.getElementById(
+            "galleryGrid"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/gallery"
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Gallery unavailable"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        const gallery =
+            Array.isArray(
+                data.gallery
+            )
+                ? data.gallery
+                : [];
+
+
+        if (gallery.length === 0) {
+
+            grid.innerHTML = `
+                <div class="loading">
+                    Gallery will be updated soon.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        grid.innerHTML =
+            gallery
+                .map(image => {
+
+                    return `
+
+                        <div class="gallery-item">
+
+                            <img
+                                src="${escapeHTML(image)}"
+                                alt="KIRUTHIS PARLOUR"
+                                loading="lazy"
+                                onerror="this.style.display='none'"
+                            >
+
+                        </div>
+
+                    `;
+
+                })
+                .join("");
+
+
+    } catch (error) {
+
+        console.error(
+            "Gallery error:",
+            error
+        );
+
+
+        grid.innerHTML = `
+            <div class="loading">
+                Gallery could not be loaded.
+            </div>
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   BOOKING
+===================================================== */
+
+document
+    .getElementById("bookingForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const serviceId =
+                document.getElementById(
+                    "service"
+                ).value;
+
+
+            const selectedService =
+                allServices.find(
+                    service =>
+                        String(
+                            service.id
+                        ) ===
+                        String(
+                            serviceId
+                        )
+                );
+
+
+            if (!selectedService) {
+
+                showBookingMessage(
+                    "Please select a service.",
+                    false
+                );
+
+                return;
+
+            }
+
+
+            const bookingData = {
+
+                customerName:
+                    document.getElementById(
+                        "customerName"
+                    ).value.trim(),
+
+                phone:
+                    document.getElementById(
+                        "phone"
+                    ).value.trim(),
+
+                email:
+                    document.getElementById(
+                        "email"
+                    ).value.trim(),
+
+                service:
+                    selectedService.name,
+
+                price:
+                    Number(
+                        selectedService.price || 0
+                    ),
+
+                members:
+                    Number(
+                        document.getElementById(
+                            "members"
+                        ).value || 1
+                    ),
+
+                date:
+                    document.getElementById(
+                        "date"
+                    ).value,
+
+                time:
+                    document.getElementById(
+                        "time"
+                    ).value,
+
+                notes:
+                    document.getElementById(
+                        "additionalNotes"
+                    ).value.trim()
+
+            };
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/bookings",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    bookingData
+                                )
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    !response.ok ||
+                    !data.success
+                ) {
+
+                    throw new Error(
+                        data.message ||
+                        "Booking failed"
+                    );
+
+                }
+
+
+                showBookingMessage(
+                    "Your appointment has been booked successfully.",
+                    true
+                );
+
+
+                document
+                    .getElementById(
+                        "bookingForm"
+                    )
+                    .reset();
+
+
+                document
+                    .getElementById(
+                        "members"
+                    )
+                    .value = 1;
+
+
+            } catch (error) {
+
+                console.error(
+                    "Booking error:",
+                    error
+                );
+
+
+                showBookingMessage(
+                    error.message ||
+                    "Booking failed. Please try again.",
+                    false
+                );
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   BOOKING MESSAGE
+===================================================== */
+
+function showBookingMessage(
+    text,
+    success
+) {
+
+    const message =
+        document.getElementById(
+            "bookingMessage"
+        );
+
+
+    message.textContent =
+        text;
+
+
+    message.style.display =
+        "block";
+
+
+    message.style.background =
+        success
+            ? "#e8f7ed"
+            : "#fdeaea";
+
+
+    message.style.color =
+        success
+            ? "#176b35"
+            : "#a11a1a";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+/* =====================================================
+   MINIMUM BOOKING DATE
+===================================================== */
+
+const dateInput =
+    document.getElementById(
+        "date"
+    );
+
+
+if (dateInput) {
+
+    const today =
+        new Date()
+            .toISOString()
+            .split("T")[0];
+
+
+    dateInput.min =
+        today;
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadServices();
+
+loadGallery();
+
+</script>
+
+</body>
+</html>

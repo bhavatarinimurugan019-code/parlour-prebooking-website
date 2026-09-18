@@ -1,0 +1,419 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "name": "Haircut & Styling",
+      "category": "Hair",
+      "price": 499,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800"
+    },
+    {
+      "id": 2,
+      "name": "Kids Haircut",
+      "category": "Hair",
+      "price": 299,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800"
+    },
+    {
+      "id": 3,
+      "name": "Hair Wash",
+      "category": "Hair",
+      "price": 249,
+      "duration": "20 min",
+      "image": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800"
+    },
+    {
+      "id": 4,
+      "name": "Blow Dry",
+      "category": "Hair",
+      "price": 399,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800"
+    },
+    {
+      "id": 5,
+      "name": "Hair Styling",
+      "category": "Hair",
+      "price": 599,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800"
+    },
+    {
+      "id": 6,
+      "name": "Hair Colour",
+      "category": "Hair",
+      "price": 1499,
+      "duration": "90 min",
+      "image": "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800"
+    },
+    {
+      "id": 7,
+      "name": "Global Hair Colour",
+      "category": "Hair",
+      "price": 1999,
+      "duration": "120 min",
+      "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800"
+    },
+    {
+      "id": 8,
+      "name": "Highlights",
+      "category": "Hair",
+      "price": 1999,
+      "duration": "120 min",
+      "image": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800"
+    },
+    {
+      "id": 9,
+      "name": "Hair Spa",
+      "category": "Hair",
+      "price": 899,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800"
+    },
+    {
+      "id": 10,
+      "name": "Anti-Dandruff Hair Spa",
+      "category": "Hair",
+      "price": 999,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800"
+    },
+    {
+      "id": 11,
+      "name": "Smoothening",
+      "category": "Hair",
+      "price": 4999,
+      "duration": "180 min",
+      "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800"
+    },
+    {
+      "id": 12,
+      "name": "Keratin Treatment",
+      "category": "Hair",
+      "price": 5999,
+      "duration": "180 min",
+      "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800"
+    },
+    {
+      "id": 13,
+      "name": "Hair Botox",
+      "category": "Hair",
+      "price": 5999,
+      "duration": "180 min",
+      "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800"
+    },
+
+    {
+      "id": 14,
+      "name": "Basic Clean Up",
+      "category": "Skin & Facial",
+      "price": 499,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800"
+    },
+    {
+      "id": 15,
+      "name": "Fruit Facial",
+      "category": "Skin & Facial",
+      "price": 799,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
+    },
+    {
+      "id": 16,
+      "name": "Herbal Facial",
+      "category": "Skin & Facial",
+      "price": 899,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
+    },
+    {
+      "id": 17,
+      "name": "Gold Facial",
+      "category": "Skin & Facial",
+      "price": 1499,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800"
+    },
+    {
+      "id": 18,
+      "name": "Pearl Facial",
+      "category": "Skin & Facial",
+      "price": 1199,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
+    },
+    {
+      "id": 19,
+      "name": "De-Tan Treatment",
+      "category": "Skin & Facial",
+      "price": 599,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800"
+    },
+    {
+      "id": 20,
+      "name": "Bleaching",
+      "category": "Skin & Facial",
+      "price": 499,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800"
+    },
+    {
+      "id": 21,
+      "name": "Detan Facial",
+      "category": "Skin & Facial",
+      "price": 899,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1556760544-74068565f05c?w=800"
+    },
+    {
+      "id": 22,
+      "name": "Acne Control Facial",
+      "category": "Skin & Facial",
+      "price": 1199,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
+    },
+    {
+      "id": 23,
+      "name": "Hydrating Facial",
+      "category": "Skin & Facial",
+      "price": 1299,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800"
+    },
+    {
+      "id": 24,
+      "name": "Brightening Facial",
+      "category": "Skin & Facial",
+      "price": 1399,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
+    },
+    {
+      "id": 25,
+      "name": "Anti-Ageing Facial",
+      "category": "Skin & Facial",
+      "price": 1599,
+      "duration": "75 min",
+      "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800"
+    },
+    {
+      "id": 26,
+      "name": "Skin Polishing",
+      "category": "Skin & Facial",
+      "price": 999,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800"
+    },
+    {
+      "id": 27,
+      "name": "Face Bleach",
+      "category": "Skin & Facial",
+      "price": 499,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
+    },
+    {
+      "id": 28,
+      "name": "Face Cleanup",
+      "category": "Skin & Facial",
+      "price": 599,
+      "duration": "40 min",
+      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
+    },
+
+    {
+      "id": 29,
+      "name": "Eyebrow Threading",
+      "category": "Threading",
+      "price": 50,
+      "duration": "10 min",
+      "image": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800"
+    },
+    {
+      "id": 30,
+      "name": "Upper Lip Threading",
+      "category": "Threading",
+      "price": 40,
+      "duration": "10 min",
+      "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800"
+    },
+    {
+      "id": 31,
+      "name": "Chin Threading",
+      "category": "Threading",
+      "price": 40,
+      "duration": "10 min",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
+    },
+    {
+      "id": 32,
+      "name": "Full Face Threading",
+      "category": "Threading",
+      "price": 250,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
+    },
+
+    {
+      "id": 33,
+      "name": "Underarm Wax",
+      "category": "Waxing",
+      "price": 199,
+      "duration": "15 min",
+      "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800"
+    },
+    {
+      "id": 34,
+      "name": "Full Arms Wax",
+      "category": "Waxing",
+      "price": 399,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800"
+    },
+    {
+      "id": 35,
+      "name": "Full Legs Wax",
+      "category": "Waxing",
+      "price": 599,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
+    },
+    {
+      "id": 36,
+      "name": "Full Body Wax",
+      "category": "Waxing",
+      "price": 1999,
+      "duration": "120 min",
+      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
+    },
+
+    {
+      "id": 37,
+      "name": "Manicure",
+      "category": "Nails",
+      "price": 499,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800"
+    },
+    {
+      "id": 38,
+      "name": "Pedicure",
+      "category": "Nails",
+      "price": 699,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800"
+    },
+    {
+      "id": 39,
+      "name": "Spa Manicure",
+      "category": "Nails",
+      "price": 799,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800"
+    },
+    {
+      "id": 40,
+      "name": "Spa Pedicure",
+      "category": "Nails",
+      "price": 999,
+      "duration": "75 min",
+      "image": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800"
+    },
+    {
+      "id": 41,
+      "name": "Gel Nail Polish",
+      "category": "Nails",
+      "price": 599,
+      "duration": "45 min",
+      "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800"
+    },
+
+    {
+      "id": 42,
+      "name": "Party Makeup",
+      "category": "Makeup",
+      "price": 2499,
+      "duration": "90 min",
+      "image": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800"
+    },
+    {
+      "id": 43,
+      "name": "Engagement Makeup",
+      "category": "Makeup",
+      "price": 5999,
+      "duration": "120 min",
+      "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800"
+    },
+    {
+      "id": 44,
+      "name": "HD Makeup",
+      "category": "Makeup",
+      "price": 3999,
+      "duration": "120 min",
+      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
+    },
+
+    {
+      "id": 45,
+      "name": "Bridal Makeup",
+      "category": "Bridal",
+      "price": 8999,
+      "duration": "180 min",
+      "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800"
+    },
+    {
+      "id": 46,
+      "name": "HD Bridal Makeup",
+      "category": "Bridal",
+      "price": 12999,
+      "duration": "210 min",
+      "image": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800"
+    },
+    {
+      "id": 47,
+      "name": "Reception Makeup",
+      "category": "Bridal",
+      "price": 4999,
+      "duration": "120 min",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
+    },
+
+    {
+      "id": 48,
+      "name": "Head Massage",
+      "category": "Spa",
+      "price": 399,
+      "duration": "30 min",
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800"
+    },
+    {
+      "id": 49,
+      "name": "Body Massage",
+      "category": "Spa",
+      "price": 1499,
+      "duration": "60 min",
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800"
+    },
+    {
+      "id": 50,
+      "name": "Relaxation Spa",
+      "category": "Spa",
+      "price": 1999,
+      "duration": "90 min",
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800"
+    }
+  ],
+
+  "bookings": [],
+
+  "gallery": [
+    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1000",
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000",
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000"
+  ]
+}

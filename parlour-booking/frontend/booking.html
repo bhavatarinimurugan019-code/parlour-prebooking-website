@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Book Appointment | Lumière Beauty Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .booking-page {
+      min-height: 90vh;
+      padding: 70px 7%;
+    }
+
+    .booking-box {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 45px;
+      border-radius: 25px;
+    }
+
+    .booking-box h1 {
+      font-family: "Playfair Display";
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .booking-box > p {
+      color: #766c66;
+      margin-bottom: 35px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd2c9;
+      border-radius: 10px;
+      font: inherit;
+      background: #fffaf5;
+      outline: none;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .book-submit {
+      margin-top: 25px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      padding: 17px;
+      border-radius: 30px;
+      background: #29221f;
+      color: white;
+      font-size: 15px;
+    }
+
+    @media(max-width: 650px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .booking-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    Lumière
+    <span>Beauty Studio</span>
+  </div>
+
+  <a href="index.html" class="nav-btn">Back Home</a>
+</header>
+
+<section class="booking-page">
+
+  <div class="booking-box">
+
+    <p class="small-title">APPOINTMENT</p>
+
+    <h1>Reserve your moment.</h1>
+
+    <p>
+      Choose your service, preferred date and time.
+    </p>
+
+    <form id="bookingForm">
+
+      <div class="form-grid">
+
+        <div class="field full">
+          <label>Select Service</label>
+
+          <select id="service" required>
+            <option value="">Choose a service</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Full Name</label>
+          <input id="customerName" type="text" required>
+        </div>
+
+        <div class="field">
+          <label>Phone Number</label>
+          <input id="phone" type="tel" required>
+        </div>
+
+        <div class="field full">
+          <label>Email</label>
+          <input id="email" type="email" required>
+        </div>
+
+        <div class="field">
+          <label>Date</label>
+          <input id="date" type="date" required>
+        </div>
+
+        <div class="field">
+          <label>Preferred Time</label>
+
+          <select id="time" required>
+            <option value="">Choose time</option>
+            <option>09:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>01:00 PM</option>
+            <option>02:00 PM</option>
+            <option>03:00 PM</option>
+            <option>04:00 PM</option>
+            <option>05:00 PM</option>
+            <option>06:00 PM</option>
+            <option>07:00 PM</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label>Additional Notes</label>
+          <textarea id="notes" placeholder="Any special requirements?"></textarea>
+        </div>
+
+      </div>
+
+      <button class="book-submit" type="submit">
+        Continue to Payment
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/booking.js"></script>
+
+</body>
+</html>
