@@ -104,7 +104,6 @@
       "duration": "180 min",
       "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800"
     },
-
     {
       "id": 14,
       "name": "Basic Clean Up",
@@ -225,7 +224,6 @@
       "duration": "40 min",
       "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
     },
-
     {
       "id": 29,
       "name": "Eyebrow Threading",
@@ -258,7 +256,6 @@
       "duration": "30 min",
       "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
     },
-
     {
       "id": 33,
       "name": "Underarm Wax",
@@ -291,7 +288,6 @@
       "duration": "120 min",
       "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
     },
-
     {
       "id": 37,
       "name": "Manicure",
@@ -332,7 +328,6 @@
       "duration": "45 min",
       "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800"
     },
-
     {
       "id": 42,
       "name": "Party Makeup",
@@ -357,7 +352,6 @@
       "duration": "120 min",
       "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800"
     },
-
     {
       "id": 45,
       "name": "Bridal Makeup",
@@ -382,7 +376,6 @@
       "duration": "120 min",
       "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800"
     },
-
     {
       "id": 48,
       "name": "Head Massage",
@@ -408,9 +401,23 @@
       "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800"
     }
   ],
-
-  "bookings": [],
-
+  "bookings": [
+    {
+      "id": 1789731451593,
+      "customerName": "bhava",
+      "phone": "9865298765",
+      "email": "bhava@gmail.com",
+      "service": "Global Hair Colour",
+      "price": 1999,
+      "members": 1,
+      "date": "2026-09-18",
+      "time": "17:07",
+      "notes": "neat",
+      "status": "Pending",
+      "paymentStatus": "Pending",
+      "createdAt": "2026-09-18T11:37:31.593Z"
+    }
+  ],
   "gallery": [
     "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1000",
     "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000",
