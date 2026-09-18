@@ -1,7 +1,10 @@
 [build]
-  command = "npm --prefix src run build"
+  command = "npm --prefix src install --no-audit --no-fund && npm --prefix src run build"
   publish = "src/dist"
   functions = "src/netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
 
 [[redirects]]
   from = "/api/*"
