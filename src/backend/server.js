@@ -1,45 +1,16 @@
 const express = require("express");
 const path = require("path");
-const fs = require("fs");
+require("dotenv").config();
+const { getData, initializeDatabase, saveData } = require("./db");
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
 const ROOT = path.join(__dirname, "..");
-const DATA_FILE = path.join(__dirname, "data.json");
 const FRONTEND = path.join(ROOT, "frontend");
 
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
-
-function getData() {
-  try {
-    if (!fs.existsSync(DATA_FILE)) {
-      return {
-        services: [],
-        bookings: [],
-        gallery: []
-      };
-    }
-
-    return JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
-  } catch (error) {
-    console.error("Data read error:", error);
-    return {
-      services: [],
-      bookings: [],
-      gallery: []
-    };
-  }
-}
-
-function saveData(data) {
-  fs.writeFileSync(
-    DATA_FILE,
-    JSON.stringify(data, null, 2),
-    "utf8"
-  );
-}
 
 /* =========================
    FRONTEND
@@ -90,19 +61,24 @@ app.post("/api/admin/login", (req, res) => {
    SERVICES
 ========================= */
 
-app.get("/api/services", (req, res) => {
-  const data = getData();
+app.get("/api/services", async (req, res, next) => {
+  try {
+    const data = await getData();
 
-  res.json({
-    success: true,
-    services: data.services || []
-  });
+    res.json({
+      success: true,
+      services: data.services || []
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* ADD SERVICE */
 
-app.post("/api/services", (req, res) => {
-  const data = getData();
+app.post("/api/services", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const {
     name,
@@ -129,19 +105,23 @@ app.post("/api/services", (req, res) => {
   };
 
   data.services.push(newService);
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     service: newService,
     message: "Service added successfully"
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* EDIT SERVICE */
 
-app.put("/api/services/:id", (req, res) => {
-  const data = getData();
+app.put("/api/services/:id", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const id = Number(req.params.id);
 
@@ -172,19 +152,23 @@ app.put("/api/services/:id", (req, res) => {
 
   data.services[index] = updatedService;
 
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     service: updatedService,
     message: "Service updated successfully"
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* DELETE SERVICE */
 
-app.delete("/api/services/:id", (req, res) => {
-  const data = getData();
+app.delete("/api/services/:id", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const id = Number(req.params.id);
 
@@ -201,29 +185,37 @@ app.delete("/api/services/:id", (req, res) => {
     });
   }
 
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     message: "Service deleted successfully"
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* =========================
    BOOKINGS
 ========================= */
 
-app.get("/api/bookings", (req, res) => {
-  const data = getData();
+app.get("/api/bookings", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   res.json({
     success: true,
     bookings: data.bookings || []
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
-app.post("/api/bookings", (req, res) => {
-  const data = getData();
+app.post("/api/bookings", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const {
     customerName,
@@ -261,17 +253,21 @@ app.post("/api/bookings", (req, res) => {
   };
 
   data.bookings.push(booking);
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     booking,
     message: "Booking created successfully"
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
-app.get("/api/bookings/:id", (req, res) => {
-  const data = getData();
+app.get("/api/bookings/:id", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const id = Number(req.params.id);
 
@@ -290,10 +286,14 @@ app.get("/api/bookings/:id", (req, res) => {
     success: true,
     booking
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
-app.put("/api/bookings/:id", (req, res) => {
-  const data = getData();
+app.put("/api/bookings/:id", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const id = Number(req.params.id);
 
@@ -314,37 +314,45 @@ app.put("/api/bookings/:id", (req, res) => {
     id: data.bookings[index].id
   };
 
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     booking: data.bookings[index],
     message: "Booking updated successfully"
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* IMPORTANT:
    CLEAR ROUTE MUST COME BEFORE /:id
 */
 
-app.delete("/api/bookings/clear", (req, res) => {
-  const data = getData();
+app.delete("/api/bookings/clear", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const count = data.bookings.length;
 
   data.bookings = [];
 
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     deletedCount: count,
     message: "All bookings cleared successfully"
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
-app.delete("/api/bookings/:id", (req, res) => {
-  const data = getData();
+app.delete("/api/bookings/:id", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const id = Number(req.params.id);
 
@@ -361,29 +369,37 @@ app.delete("/api/bookings/:id", (req, res) => {
 
   data.bookings[index].status = "Cancelled";
 
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     message: "Booking cancelled successfully"
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* =========================
    GALLERY
 ========================= */
 
-app.get("/api/gallery", (req, res) => {
-  const data = getData();
+app.get("/api/gallery", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   res.json({
     success: true,
     gallery: data.gallery || []
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
-app.post("/api/gallery", (req, res) => {
-  const data = getData();
+app.post("/api/gallery", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const { imageUrl } = req.body;
 
@@ -396,17 +412,21 @@ app.post("/api/gallery", (req, res) => {
 
   data.gallery.push(imageUrl);
 
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     message: "Image added successfully",
     gallery: data.gallery
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
-app.delete("/api/gallery/:index", (req, res) => {
-  const data = getData();
+app.delete("/api/gallery/:index", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const index = Number(req.params.index);
 
@@ -423,21 +443,25 @@ app.delete("/api/gallery/:index", (req, res) => {
 
   data.gallery.splice(index, 1);
 
-  saveData(data);
+  await saveData(data);
 
   res.json({
     success: true,
     message: "Image deleted successfully",
     gallery: data.gallery
   });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* =========================
    DASHBOARD
 ========================= */
 
-app.get("/api/dashboard", (req, res) => {
-  const data = getData();
+app.get("/api/dashboard", async (req, res, next) => {
+  try {
+  const data = await getData();
 
   const bookings = data.bookings || [];
   const services = data.services || [];
@@ -473,6 +497,17 @@ app.get("/api/dashboard", (req, res) => {
     totalServices: services.length,
     totalGallery: (data.gallery || []).length
   });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.use((error, req, res, next) => {
+  console.error("API error:", error);
+  res.status(500).json({
+    success: false,
+    message: "Internal server error"
+  });
 });
 
 /* =========================
@@ -480,7 +515,11 @@ app.get("/api/dashboard", (req, res) => {
 ========================= */
 
 if (require.main === module) {
-  app.listen(PORT, () => {
+  initializeDatabase()
+    .catch(error => {
+      console.error("MongoDB initialization failed:", error.message);
+    })
+    .finally(() => app.listen(PORT, () => {
     console.log("");
     console.log("====================================");
     console.log(" KIRUTHIS PARLOUR");
@@ -489,7 +528,7 @@ if (require.main === module) {
     console.log(` Admin:    http://localhost:${PORT}/admin`);
     console.log("====================================");
     console.log("");
-  });
+    }));
 }
 
 module.exports = app;

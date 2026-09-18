@@ -655,6 +655,11 @@
                         placeholder="Service name">
 
                     <input
+                        id="serviceCategory"
+                        placeholder="Category"
+                        value="Hair">
+
+                    <input
                         id="servicePrice"
                         type="number"
                         placeholder="Price">
@@ -972,8 +977,8 @@ async function loadBookings() {
         const response =
             await fetch("/api/bookings");
 
-        bookings =
-            await response.json();
+        const result = await response.json();
+        bookings = result.bookings || [];
 
         renderBookings();
 
@@ -1319,8 +1324,8 @@ async function loadServices() {
         const response =
             await fetch("/api/services");
 
-        services =
-            await response.json();
+        const result = await response.json();
+        services = result.services || [];
 
         renderServices();
 
@@ -1416,6 +1421,12 @@ async function addService() {
             .getElementById("servicePrice")
             .value;
 
+    const category =
+        document
+            .getElementById("serviceCategory")
+            .value
+            .trim();
+
     const duration =
         document
             .getElementById("serviceDuration")
@@ -1423,7 +1434,7 @@ async function addService() {
             .trim();
 
 
-    if (!name || !price) {
+    if (!name || !category || !price) {
 
         alert(
             "Please enter service name and price."
@@ -1451,6 +1462,8 @@ async function addService() {
                     body: JSON.stringify({
 
                         name,
+
+                        category,
 
                         price,
 
@@ -1577,8 +1590,8 @@ async function loadAdminGallery() {
         const response =
             await fetch("/api/gallery");
 
-        const gallery =
-            await response.json();
+        const result = await response.json();
+        const gallery = result.gallery || [];
 
         const grid =
             document.getElementById(
@@ -1989,25 +2002,25 @@ async function loadDashboard() {
         document.getElementById(
             "activeClients"
         ).textContent =
-            data.activeClients || 0;
+            data.totalBookings || 0;
 
 
         document.getElementById(
             "todayAppointments"
         ).textContent =
-            data.todayAppointments || 0;
+            data.pendingBookings || 0;
 
 
         document.getElementById(
             "waitingCount"
         ).textContent =
-            data.waiting || 0;
+            data.pendingBookings || 0;
 
 
         document.getElementById(
             "confirmedCount"
         ).textContent =
-            data.confirmed || 0;
+            data.confirmedBookings || 0;
 
 
         document.getElementById(
@@ -2015,7 +2028,7 @@ async function loadDashboard() {
         ).textContent =
             "₹" +
             Number(
-                data.paidRevenue || 0
+                data.revenue || 0
             ).toLocaleString("en-IN");
 
 

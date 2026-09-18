@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "node backend/server.js",
@@ -22,10 +25,12 @@
     "mongodb": "^7.6.0",
     "mongoose": "^9.10.1",
     "multer": "^2.4.0",
-    "razorpay": "^2.9.8"
+    "razorpay": "^2.9.8",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "vite": "^7.1.5"
   }
 }

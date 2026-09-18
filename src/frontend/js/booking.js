@@ -1,4 +1,31 @@
 let services = [];
+const adminWhatsAppNumber = import.meta.env.VITE_ADMIN_WHATSAPP_NUMBER || "";
+
+function openAdminWhatsApp(booking, bookingId) {
+  const number = adminWhatsAppNumber.replace(/\D/g, "");
+
+  if (!number) {
+    return;
+  }
+
+  const message = [
+    "New KIRUTHIS PARLOUR appointment",
+    `Booking ID: ${bookingId || "Pending"}`,
+    `Name: ${booking.customerName}`,
+    `Phone: ${booking.phone}`,
+    `Service: ${booking.service}`,
+    `Date: ${booking.date}`,
+    `Time: ${booking.time}`,
+    `Price: INR ${booking.price}`,
+    booking.notes ? `Notes: ${booking.notes}` : ""
+  ].filter(Boolean).join("\n");
+
+  window.open(
+    `https://wa.me/${number}?text=${encodeURIComponent(message)}`,
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
 
 async function loadServices() {
   const response = await fetch("/api/services");
@@ -53,20 +80,29 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     return;
   }
 
-  const orderResponse = await fetch("/api/create-order", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      amount: service.price
-    })
-  });
+  let orderResult = { success: false };
 
-  const orderResult = await orderResponse.json();
+  try {
+    const orderResponse = await fetch("/api/create-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        amount: service.price
+      })
+    });
+
+    if (orderResponse.ok) {
+      orderResult = await orderResponse.json();
+    }
+  } catch (error) {
+    console.warn("Payment setup unavailable:", error);
+  }
 
   if (!orderResult.success) {
     alert("Booking saved. Payment setup is not configured yet.");
+    openAdminWhatsApp(bookingData, bookingResult.booking?.id);
     localStorage.setItem(
       "booking",
       JSON.stringify(bookingData)
@@ -103,6 +139,11 @@ document.getElementById("bookingForm").addEventListener("submit", async function
           paymentId: response.razorpay_payment_id,
           paymentStatus: "Paid"
         })
+      );
+
+      openAdminWhatsApp(
+        { ...bookingData, paymentStatus: "Paid" },
+        bookingResult.booking?.id
       );
 
       window.location.href = "success.html";
